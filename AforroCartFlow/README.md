@@ -1,97 +1,90 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# AforroCartFlow
 
-# Getting Started
+AforroCartFlow is a high-performance, aesthetically pleasing React Native e-commerce mobile application designed for a seamless shopping experience. It features a robust architecture, centralized state management, and a premium UI/UX design.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🏗️ Project Architecture
 
-## Step 1: Start Metro
+The project follows a modular and scalable architecture, ensuring maintainability and ease of development.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 1. Folder Structure
+- **`src/components`**: Reusable UI atoms and molecules (Buttons, Cards, Modals, etc.).
+- **`src/screens`**: Main application views (Product Listing, Cart Review, etc.).
+- **`src/store`**: Redux Toolkit slices, hooks, and store configuration for global state management.
+- **`src/theme`**: Centralized design tokens (colors, typography, spacing).
+- **`src/data`**: Mock data and TypeScript interfaces for data models.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 2. State Management
+We use **Redux Toolkit (RTK)** for predictable state transitions.
+- **`cartSlice`**: Manages the shopping cart state, including item additions/removals, coupon applications, and checkout status.
+- **Hooks**: Custom `useAppDispatch` and `useAppSelector` hooks for type-safe interaction with the store.
 
+### 3. Navigation
+Powered by **React Navigation**, utilizing a native stack for smooth transitions and optimal performance on both iOS and Android.
+
+---
+
+## 🎨 Design Philosophy
+
+Our design philosophy focuses on **Visual Excellence**, **User Engagement**, and **Performance**.
+
+### 1. Premium Aesthetics
+- **Color Palette**: A curated selection of colors defined in `src/theme/colors.ts`, ensuring consistency across the app. We favor soft surfaces and high-contrast text for readability.
+- **Micro-Animations**: Extensive use of `react-native-reanimated` for fluid interactions, such as layout transitions and interactive gestures.
+- **Glassmorphism & Modality**: Use of bottom sheets (`@gorhom/bottom-sheet`) for non-blocking secondary interactions like login prompts and address selection.
+
+### 2. Mental Model & UX
+- **Contextual Feedback**: Dynamic banners (e.g., "You are saving ₹X") provide immediate gratification and encourage conversion.
+- **Seamless Checkout**: Minimizing friction by using overlays for essential steps (address, login) instead of navigating away from the cart.
+- **Responsive Layouts**: Designed to look stunning on all screen sizes, from small Android devices to the latest iPhones.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: React Native (0.84.1), TypeScript
+- **State**: Redux Toolkit, React Redux
+- **Navigation**: React Navigation (Native Stack)
+- **UI & Animations**: Lucide Icons, React Native Reanimated, Gorhom Bottom Sheet, React Native SVG
+- **Styling**: Standard StyleSheet (Vanilla CSS approach for React Native)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (>= 22.11.0)
+- Watchman
+- Android Studio / Xcode for emulators
+
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. (iOS only) Install CocoaPods:
+   ```sh
+   cd ios && pod install && cd ..
+   ```
+
+### Running the App
+1. Start Metro:
+   ```sh
+   npm start
+   ```
+2. Run on Android:
+   ```sh
+   npm run android
+   ```
+3. Run on iOS:
+   ```sh
+   npm run ios
+   ```
+
+---
+
+## 🧪 Testing
+We use **Jest** and **React Test Renderer** for unit and component testing.
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+npm test
 ```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
